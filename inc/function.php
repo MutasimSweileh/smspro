@@ -1056,12 +1056,7 @@ function TimeShare($A=false){
 function Num($tp='',$w=''){
      global $DBcon;
    $Sql=  mysqli_query($DBcon,"select * from $tp $w");
- if($Sql){
 return  mysqli_num_rows($Sql);
-   }else{
-return  false;
-   }
-
 }
 function Ls($s=''){
     if($s == 1){
