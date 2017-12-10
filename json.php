@@ -15,7 +15,7 @@ if($sql){
 }else{
 $S = Sel("message","where send='0'");
 if($S){
- $arrayName = array('error' =>false,'id' =>$S->id,'Number' =>$S->number,"msg"=>$S->message,"date"=>$S->date,"cantry"=>$S->cantry);
+ $arrayName = array('error' =>false,'id' =>$S->id,'number' =>$S->number,"message"=>$S->message,"date"=>$S->date,"cantry"=>$S->cantry);
  echo json_encode($arrayName);
 }else{
   $arrayName = array('error' =>true,"msg"=>"no message !!");
