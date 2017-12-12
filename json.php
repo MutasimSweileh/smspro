@@ -8,7 +8,12 @@ for($i=0; $i < count($convert_to_array ); $i++){
     $key_value2 = explode(',', $convert_to_array2[$i]);
     $end_array[$key_value [0]] = $key_value2 [0];
 }
-die(print_r($end_array));
+$Sql =  SqlIn("number",$end_array);
+if($Sql){
+  echo json_encode(array('success' =>true));
+}else{
+    echo json_encode(array('success' =>false));
+}
 }else if(isv("message")){
 if(isv("id")){
 $sql =  UpDate("message","send",1,"where id=".isv("id"));
