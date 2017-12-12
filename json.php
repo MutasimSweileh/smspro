@@ -8,8 +8,11 @@ for($i=0; $i < count($convert_to_array ); $i++){
     $key_value2 = explode(',', $convert_to_array2[$i]);
     $end_array[$key_value [0]] = $key_value2 [0];
 }
-if(isv("where")){
-$Sql =  UpDate(isv("table"),$end_array,null,isv("where"));
+if(Num(isv("table"),"where $convert_to_array[0]='".$convert_to_array2[0]."'")){
+$Sql = false;
+if(isv("up")){
+$Sql =  UpDate(isv("table"),$end_array,null,"where $convert_to_array[0]='".$convert_to_array2[0]."'");
+}
 }else{
 $Sql =  SqlIn(isv("table"),$end_array);
 }
