@@ -24,7 +24,7 @@ $Sql =  SqlIn(isv("table"),$end_array);
 if($Sql){
   echo json_encode(array('success' =>true,"code"=>$code,"msg"=>"تم الحفظ بنجاح "));
 }else{
-    echo json_encode(array('success' =>false,"code"=>$code,"msg"=>$msg));
+    echo json_encode(array('success' =>false,"code"=>$code,"msg"=>mysqli_error($DBcon)));
 }
 }else if(isv("message")){
 if(isv("id")){
