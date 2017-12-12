@@ -8,7 +8,11 @@ for($i=0; $i < count($convert_to_array ); $i++){
     $key_value2 = explode(',', $convert_to_array2[$i]);
     $end_array[$key_value [0]] = $key_value2 [0];
 }
-$Sql =  SqlIn("number",$end_array);
+if(isv("where")){
+$Sql =  UpDate(isv("table"),$end_array,null,isv("where"));
+}else{
+$Sql =  SqlIn(isv("table"),$end_array);
+}
 if($Sql){
   echo json_encode(array('success' =>true));
 }else{
